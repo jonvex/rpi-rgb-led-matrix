@@ -62,7 +62,7 @@ int main() {
 
     Canvas *canvas = matrix;
     Board *b = new Board(canvas);
-    int count = 32;
+    int count = 31;
     while (!interrupt_received) {
         b->Square(0,0,count,count,255 * (count % 2),0,0);
         if (count == 0) {
@@ -70,7 +70,7 @@ int main() {
         } else {
             count = count - 1;
         }
-        sleep(0.5);
+        sleep(1);
     }
     
 
