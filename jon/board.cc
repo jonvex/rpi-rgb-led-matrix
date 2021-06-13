@@ -65,7 +65,7 @@ int main() {
     int count = 32;
     while (!interrupt_received) {
         b->Square(0,0,count,count,255 * (count % 2),0,0);
-        if (count = 0) {
+        if (count == 0) {
             count = 32;
         } else {
             count = count - 1;
