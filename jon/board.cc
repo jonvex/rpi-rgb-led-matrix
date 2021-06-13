@@ -1,4 +1,4 @@
-#include "../include/led-matrix.h"
+#include "led-matrix.h"
 
 #include "pixel-mapper.h"
 #include "graphics.h"
@@ -62,8 +62,12 @@ int main() {
 
     Canvas *canvas = matrix;
     Board *b = new Board(canvas);
-    b->Square(0,0,1,1,255,0,0);
+    while (!interrupt_received) {
+        b->Square(0,0,1,1,255,0,0);
+        sleep(2);
+    }
     
+
     delete b;
     delete canvas;
     printf("Received CTRL-C. Exiting.\n");
